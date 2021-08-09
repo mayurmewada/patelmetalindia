@@ -32,6 +32,10 @@ body {
   -webkit-text-stroke-color: #0062c5;
 }
 
+.fa-whatsapp:hover {
+  text-decoration: none;
+}
+
 .nav-link {
   font-weight: bold;
   font-size: 1.25rem;
@@ -97,17 +101,8 @@ body {
   margin-bottom: 24px;
 }
 
-.about .para {
-}
-
 .work {
   margin-top: 100px;
-}
-
-.work .sub-heading {
-}
-
-.work .para {
 }
 
 .work-gallery {
@@ -127,10 +122,67 @@ body {
   grid-row-gap: 25px;
 }
 
-.images > img {
+.overlay > a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.images > .overlay > a > img {
+  position: relative;
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.images > .overlay > a > .hover-effect {
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s;
+  transform: translateY(60px);
+}
+
+.images > .overlay > a:hover > .hover-effect {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: transform 0.3s;
+}
+
+.text-wrap {
+  position: absolute;
+  left: 40px;
+  bottom: 10px;
+  width: 80%;
+}
+
+.text-wrap .categorie {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.text-wrap .title {
+  color: #fff;
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  margin-bottom: 18px;
+}
+
+.text-wrap .title span {
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #fff;
 }
 
 .box-1 {
@@ -183,33 +235,151 @@ body {
   margin-bottom: 5rem;
 }
 
-.service .sub-heading {
-}
-
-.service .para {
-}
-
 .box {
   height: 165px;
   padding: 10px;
 }
 
+.box > a {
+  color: #000;
+}
+
 .product {
-  border: 2px solid black;
-  height: 100%;
   font-size: 2rem;
+}
+
+.testimotionals {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.testimotionals .card {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
   padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+}
+.testimotionals .card .layer {
+  z-index: 1;
+  position: absolute;
+  top: calc(100% - 3px);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background: linear-gradient(to left, #0063c57e, #0072e47c);
+  transition: 0.5s;
+}
+
+.testimotionals .card .product {
+  z-index: 2;
+  position: relative;
+}
+
+.testimotionals .card:hover .layer {
+  top: 0;
 }
 
 .bg-contact {
+  width: 100%;
   z-index: -1;
+  left: 0;
   position: absolute;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+  border-style: none;
 }
 
 .contact {
   font-family: "Montserrat", sans-serif;
-  margin-bottom: 125px;
-  transform: translateY(36px);
+  margin-bottom: 175px;
+  transform: translateY(60px);
+}
+
+.contact-dtls {
+  padding: 60px;
+  color: rgb(0, 0, 0);
+  background-size: cover;
+}
+
+.contact-dtls > h3 {
+  color: rgb(0, 0, 0);
+}
+
+.contact-dtls > p {
+  font-size: 15px;
+  margin-bottom: 36px;
+}
+
+.contact-list {
+  margin-bottom: 36px;
+  display: block;
+}
+
+.contact-list > li {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.contact-list > li > i {
+  font-size: 24px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.contact-list > li > div {
+  padding-left: 24px;
+}
+
+.contact-list > li > div > h5 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.contact-list > li > div > span {
+  font-size: 16px;
+  color: #000000;
+}
+
+.contact-list > li > div > span > a {
+  color: #000000;
+}
+
+.social-links {
+  display: flex;
+}
+
+.social-links > li {
+  list-style: none;
+}
+
+.social-links > li > a {
+  font-size: 18px;
+  color: #fff;
+  padding: 6px;
+  border: 1px solid #e5e5e5;
+  width: 36px;
+  height: 36px;
+  display: block;
+  line-height: 22px;
+  text-align: center;
+  border: none;
+}
+
+.social-links > li + li {
+  margin-left: 12px;
+}
+
+.fab {
+  color: #000;
 }
 
 .contact .sub-heading {
@@ -240,6 +410,7 @@ body {
   margin-bottom: 18px;
   position: relative;
 }
+
 .form-control {
   height: 48px;
   border: 1px solid #f5f5f5;
@@ -248,6 +419,7 @@ body {
   padding: 0 20px;
   font-weight: 500;
 }
+
 .form-control:focus {
   outline: none;
   box-shadow: none;
@@ -257,7 +429,9 @@ body {
 
 label {
   padding-left: 1rem;
+  z-index: 0;
 }
+
 .form-control + label {
   color: #606060;
   position: absolute;
@@ -265,9 +439,11 @@ label {
   left: 20px;
   transition: 0.3s linear;
 }
+
 .form-control + label span {
   color: #bbb;
 }
+
 .form-control + label.down,
 .form-control:focus + label {
   top: -9px;
@@ -283,10 +459,12 @@ label {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 3px;
-  position: relative;
+  position: absolute;
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   cursor: pointer;
-  display: block;
+  display: flex;
+  left: 100%;
+  transform: translateX(-110%);
 }
 
 .submit::after,
@@ -294,7 +472,7 @@ label {
   content: "";
   position: absolute;
   top: 50%;
-  right: 0px;
+  right: 25px;
   transform: translateY(-50%);
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -358,10 +536,15 @@ footer {
   .box-14 {
     display: none;
   }
-
   .bg-contact {
-    width: 100px;
-    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 100%;
   }
 }
 
@@ -381,5 +564,16 @@ footer {
   .images {
     margin: 8px;
     padding: 8px;
+  }
+
+  .bg-contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 90%;
   }
 }
